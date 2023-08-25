@@ -18,11 +18,11 @@ describe("Given a pingController controller", () => {
     });
 
     test("Then it should respond with 'pong' message", () => {
-      const messageText = "pong";
+      const message = "pong";
 
       pingController(req as Request, res as Response);
 
-      expect(res.json).toHaveBeenCalledWith(messageText);
+      expect(res.json).toHaveBeenCalledWith({ message });
     });
   });
 });
