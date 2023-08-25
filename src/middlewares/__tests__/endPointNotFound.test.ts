@@ -9,9 +9,9 @@ describe("Given an endpointNotFound middleware", () => {
       const res: Partial<Response> = {};
       const next: NextFunction = jest.fn();
       const expectedCustomError = new CustomError(
-        "Error, robots not found",
+        "Error, robot not found",
         404,
-        "Error, robots not found",
+        "Error, robot not found",
       );
 
       endpointNotFound(req as Request, res as Response, next);

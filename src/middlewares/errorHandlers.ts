@@ -7,9 +7,9 @@ export const endpointNotFound = (
   next: NextFunction,
 ) => {
   const newCustomError = new CustomError(
-    "Error, robots not found",
+    "Error, robot not found",
     404,
-    "error, robots not found",
+    "Error, robot not found",
   );
 
   next(newCustomError);
@@ -21,7 +21,7 @@ export const generalErrorHandler = (
   res: Response,
   _next: NextFunction,
 ) => {
-  const errorMessage = error.message ?? "Error, robot not found";
+  const errorMessage = error.message ?? "Error";
   const errorStatusCode = error.statusCode ?? 500;
 
   res.status(errorStatusCode).json({ error: errorMessage });
