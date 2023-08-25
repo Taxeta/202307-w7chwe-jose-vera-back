@@ -12,3 +12,13 @@ export const generalErrorHandler = (
 
   res.status(errorStatusCode).json({ error: errorMessage });
 };
+
+export const endpointNotFound = (
+  _req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
+  const errorNotFound = res.status(404).json({ error: "Endpoint not found" });
+
+  next(errorNotFound);
+};
