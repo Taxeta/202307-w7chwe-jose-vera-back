@@ -1,7 +1,8 @@
 {
   "env": {
     "es2021": true,
-    "node": true
+    "node": true,
+    "jest": true
   },
   "extends": ["xo", "prettier"],
   "overrides": [
@@ -21,6 +22,12 @@
             "capIsNewExceptions": ["Router"]
           }
         ]
+      }
+    },
+    {
+      "files": ["**/models/**/*.ts"],
+      "rules": {
+        "@typescript-eslint/naming-convention": "off"
       }
     }
   ],
