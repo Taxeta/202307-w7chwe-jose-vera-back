@@ -12,7 +12,7 @@ const app = express();
 app.use(morgan("dev"));
 app.use(express.json());
 
-app.use("/", pingController);
+app.get("/", pingController);
 
 app.use("/robots", robotsRouter);
 app.use(generalErrorHandler);
