@@ -1,10 +1,7 @@
 export interface RobotStructure {
+  _id: string;
   name: string;
   image: string;
   speed: number;
   resistance: number;
-}
-
-export interface RobotId extends RobotStructure {
-  _id: string;
 }
