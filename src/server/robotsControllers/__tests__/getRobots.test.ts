@@ -1,8 +1,8 @@
 import { type Request, type Response } from "express";
-import Robot from "../../../database/models/Robot";
-import CustomError from "../../../middlewares/CustomError";
-import { mockRobots } from "../../../mocks/mockRobots";
-import { getRobots } from "../robotsControllers";
+import Robot from "../../../database/models/Robot.js";
+import CustomError from "../../../middlewares/CustomError.js";
+import { mockRobots } from "../../../mocks/mockRobots.js";
+import { getRobots } from "../robotsControllers.js";
 
 beforeEach(() => {
   jest.clearAllMocks();
