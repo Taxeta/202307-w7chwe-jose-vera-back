@@ -1,6 +1,6 @@
 import debugCreator from "debug";
 import "dotenv/config";
-import connectToDatabase from "./database/models/connectToDatabase.js";
+import connectToDatabase from "./database/connectToDatabase.js";
 import startServer from "./server/startServer.js";
 
 const debug = debugCreator("robots:server:start");
