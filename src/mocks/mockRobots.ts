@@ -7,7 +7,7 @@ const mockId2 = new mongoose.Types.ObjectId().toString();
 export const mockRobots: RobotStructure[] = [
   {
     _id: mockId,
-    name: "words destructor",
+    name: "world destroyer",
     image: "https://i.ytimg.com/vi/PFPIaU3ESOw/maxresdefault.jpg",
     speed: 9,
     resistance: 5,
@@ -29,3 +29,18 @@ export const mockRobots: RobotStructure[] = [
     resistance: 8,
   },
 ];
+
+export const createdRobotMock: Omit<RobotStructure, "_id"> = {
+  name: "world destroyer",
+  image: "https://i.ytimg.com/vi/PFPIaU3ESOw/maxresdefault.jpg",
+  speed: 9,
+  resistance: 5,
+};
+
+export const newMock: Omit<RobotStructure, "_id"> = {
+  image:
+    "https://imagenes.elpais.com/resizer/ZhJcHmvOspntSX3BFGtH6ydMYTo=/1960x1470/cloudfront-eu-central-1.images.arcpublishing.com/prisa/JJ4IRQRGSRY3XOSLAZEUJ3P4SE.jpg",
+  name: "freefaier",
+  resistance: 4,
+  speed: 10,
+};

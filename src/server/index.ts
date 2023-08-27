@@ -12,7 +12,7 @@ const app = express();
 
 const corsOptions = {
   origin: true,
-  methods: "GET",
+  methods: "GET, POST",
   preflightContinue: false,
   optionsSuccessStatus: 204,
 };
