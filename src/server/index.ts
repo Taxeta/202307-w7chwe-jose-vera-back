@@ -1,3 +1,4 @@
+import cors from "cors";
 import express from "express";
 import morgan from "morgan";
 import {
@@ -9,6 +10,14 @@ import robotsRouter from "./routers/robotsRouters.js";
 
 const app = express();
 
+const corsOptions = {
+  origin: true,
+  methods: "GET",
+  preflightContinue: false,
+  optionsSuccessStatus: 204,
+};
+
+app.use(cors(corsOptions));
 app.use(morgan("dev"));
 app.use(express.json());
 
