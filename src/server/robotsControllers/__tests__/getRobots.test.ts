@@ -37,10 +37,10 @@ describe("Given a getRobots component", () => {
   });
 
   describe("When it receives a next function and can't get any robot from the database", () => {
-    test("Then it should call the received next function with 404 codestatus and 'Can't retrieve robots'", async () => {
+    test("Then it should call the received next function with 500 codestatus and 'Can't retrieve robots'", async () => {
       const expectedError = new CustomError(
         "Can't retrieve robots",
-        404,
+        500,
         "Can't retrieve robots",
       );
 

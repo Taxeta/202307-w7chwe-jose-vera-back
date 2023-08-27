@@ -12,6 +12,7 @@ let server: MongoMemoryServer;
 beforeAll(async () => {
   server = await MongoMemoryServer.create();
   await connectToDatabase(server.getUri());
+  await Robot.create(mockRobots);
 });
 
 afterAll(async () => {
@@ -19,18 +20,12 @@ afterAll(async () => {
   await server.stop();
 });
 
-afterEach(async () => {
-  await Robot.deleteMany();
-});
+const expectedPath = "/robots";
 
 describe("Given a GET '/robots' endpoint", () => {
-  beforeEach(async () => {
-    await Robot.create(mockRobots);
-  });
   describe("When it receives a request", () => {
     test("Then it should respond with status 200 and robots objects", async () => {
       const expectedCodeStatus = 200;
-      const expectedPath = "/robots";
 
       const response = await request(app)
         .get(expectedPath)
@@ -58,6 +53,14 @@ describe("Given a GET '/robots' endpoint", () => {
           );
         },
       );
+    });
+  });
+
+  describe("When it receives a request and database is offline", () => {
+    test("Then it should show an error with status code 500 and message 'Can't retrieve robots'", async () => {
+      const errorCode = 500;
+      await mongoose.connection.close();
+      await request(app).get(expectedPath).expect(errorCode);
     });
   });
 });

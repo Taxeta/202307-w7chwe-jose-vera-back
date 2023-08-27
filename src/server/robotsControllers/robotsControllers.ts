@@ -14,9 +14,10 @@ export const getRobots = async (
   } catch (error: unknown) {
     const customError = new CustomError(
       "Can't retrieve robots",
-      404,
+      500,
       (error as Error).message,
     );
+
     next(customError);
   }
 };
