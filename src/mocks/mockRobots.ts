@@ -7,7 +7,7 @@ const mockId2 = new mongoose.Types.ObjectId().toString();
 export const mockRobots: RobotStructure[] = [
   {
     _id: mockId,
-    name: "words destructor",
+    name: "world destroyer",
     image: "https://i.ytimg.com/vi/PFPIaU3ESOw/maxresdefault.jpg",
     speed: 9,
     resistance: 5,
@@ -29,3 +29,10 @@ export const mockRobots: RobotStructure[] = [
     resistance: 8,
   },
 ];
+
+export const createdRobotMock: Omit<RobotStructure, "_id"> = {
+  name: "world destroyer",
+  image: "https://i.ytimg.com/vi/PFPIaU3ESOw/maxresdefault.jpg",
+  speed: 9,
+  resistance: 5,
+};
