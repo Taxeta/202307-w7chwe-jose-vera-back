@@ -6,7 +6,7 @@ beforeEach(() => {
   jest.clearAllMocks();
 });
 
-describe("Given a generalErrorHandler middleware", () => {
+describe("Given a generalErrorHandler middleware controller", () => {
   describe("When it receives a response with an error", () => {
     const res: Partial<Response> = {
       status: jest.fn().mockReturnThis(),
@@ -67,6 +67,20 @@ describe("Given a generalErrorHandler middleware", () => {
       );
 
       expect(res.status).toHaveBeenCalledWith(expectedCode);
+    });
+
+    test("Then it should respond with 'Fatal Error' message", () => {
+      const receivedError = new Error("Fatal Error");
+      const expectedErrorMessage = "Fatal Error";
+
+      generalErrorHandler(
+        receivedError as CustomError,
+        req as Request,
+        res as Response,
+        next as NextFunction,
+      );
+
+      expect(res.json).toHaveBeenCalledWith({ error: expectedErrorMessage });
     });
   });
 });

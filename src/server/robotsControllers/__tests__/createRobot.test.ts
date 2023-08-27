@@ -56,7 +56,7 @@ describe("Given an addRobot controller", () => {
       const error = new Error("error");
       const customError = new CustomError(
         "Can't create the robot",
-        500,
+        400,
         error.message,
       );
 

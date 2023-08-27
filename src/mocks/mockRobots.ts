@@ -36,3 +36,11 @@ export const createdRobotMock: Omit<RobotStructure, "_id"> = {
   speed: 9,
   resistance: 5,
 };
+
+export const newMock: Omit<RobotStructure, "_id"> = {
+  image:
+    "https://imagenes.elpais.com/resizer/ZhJcHmvOspntSX3BFGtH6ydMYTo=/1960x1470/cloudfront-eu-central-1.images.arcpublishing.com/prisa/JJ4IRQRGSRY3XOSLAZEUJ3P4SE.jpg",
+  name: "freefaier",
+  resistance: 4,
+  speed: 10,
+};

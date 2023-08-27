@@ -20,9 +20,9 @@ afterAll(async () => {
   await server.stop();
 });
 
-const expectedPath = "/robots";
-
 describe("Given a GET '/robots' endpoint", () => {
+  const expectedPath = "/robots";
+
   describe("When it receives a request", () => {
     test("Then it should respond with status 200 and robots objects", async () => {
       const expectedCodeStatus = 200;

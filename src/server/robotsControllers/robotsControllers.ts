@@ -7,7 +7,7 @@ export const getRobots = async (
   _req: Request,
   res: Response,
   next: NextFunction,
-) => {
+): Promise<void> => {
   try {
     const robots = await Robot.find().exec();
 
@@ -41,7 +41,7 @@ export const createRobot = async (
   } catch (error: unknown) {
     const customError = new CustomError(
       "Can't create the robot",
-      500,
+      400,
       (error as Error).message,
     );
 
