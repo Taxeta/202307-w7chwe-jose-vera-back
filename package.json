@@ -8,9 +8,9 @@
     "build": "tsc",
     "build:dev": "tsc -w",
     "start": "node .",
-    "test": "jest",
-    "test:dev": "jest --watchAll",
-    "test:coverage": "jest --coverage"
+    "test": "jest --detectOpenHandles",
+    "test:dev": "jest --watchAll --detectOpenHandles",
+    "test:coverage": "jest --coverage --detectOpenHandles"
   },
   "keywords": [],
   "author": "",
