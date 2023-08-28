@@ -5,6 +5,7 @@ module.exports = {
   collectCoverageFrom: [
     "**/src/**/*.ts",
     "!**/src/index.ts",
+    "!**/src/**/connectToDatabase.ts",
     "!**/src/**/startServer.ts",
   ],
   testMatch: ["**/src/**/*.test.ts"],
